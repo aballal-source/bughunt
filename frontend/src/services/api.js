@@ -40,3 +40,9 @@ export async function upvoteBug(bugReportId, userId) {
     if (!response.ok) throw new Error("Failed to upvote");
     return response.json();
 }
+
+export async function getAnalytics() {
+    const response = await fetch(`${BASE_URL}/analytics/`);
+    if (!response.ok) throw new Error("Failed to fetch analytics");
+    return response.json();
+}

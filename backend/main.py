@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import bugs, games
+from routers import bugs, games, analytics
 
 app = FastAPI(title="BugHunt API")
 
@@ -14,6 +14,8 @@ app.add_middleware(
 
 app.include_router(bugs.router, prefix="/bugs", tags=["bugs"])
 app.include_router(games.router, prefix="/games", tags=["games"])
+
+app.include_router(analytics.router, prefix="/analytics", tags=["analytics"])
 
 @app.get("/")
 def root():
