@@ -130,6 +130,9 @@ def upvote_bug(bug_report_id: str, user_id: str):
         return {"message": "Upvote recorded successfully"}
     except Exception as e:
         conn.rollback()
+        error_message = str(e)
+        if "duplicate key" in error_message:
+            raise HTTPException(status_code=400, detail=error_message)
         raise HTTPException(status_code=500, detail="You have already upvoted this bug report")
     finally:
         cursor.close()
