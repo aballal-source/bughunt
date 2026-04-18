@@ -217,7 +217,8 @@ test_bug_form_submission            PASSED
 ![linear_defects.png](docs/screenshots/linear_defects.png)
 
 Full defect log with steps to reproduce and resolution details: 
-`/docs/test_cases.md`
+`/docs/defect_log_001.pdf` — DEF-001: Invalid severity ENUM returns 500
+`/docs/defect_log_002.pdf` — DEF-002: Duplicate upvote returns 500
 
 ## Known Limitations
 
